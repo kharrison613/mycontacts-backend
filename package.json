@@ -1,11 +1,11 @@
 {
-  "name": "mycontacts-backend",
+  "name": "my-contacts-backend-api",
   "version": "1.0.0",
   "description": "This is express project for my contacts backend api",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node servnodemoner.js",
     "dev": "nodemon server.js"
   },
   "author": "KH",
