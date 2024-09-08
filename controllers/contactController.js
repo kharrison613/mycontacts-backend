@@ -1,7 +1,7 @@
 //@desc Get all contacts
 //@route GET /api/contacts
 //@access Public
-function getContacts(req, res) {
+const getContacts = (req, res) => {
     res.status(200).json({ message: "Get all contacts" });
 }
 
