@@ -9,7 +9,10 @@ const {
   getContact,
   updateContact,
   deleteContact,
-} = require("../controllers/contactController");
+} = require("../../controllers/contactController");
+
+const contactController = require('.contactController/../controllers/contactController');
+
 
 router.route("/").get(getContacts).post(createContact);
 router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);

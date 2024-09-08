@@ -9,6 +9,7 @@ function getContacts(req, res) {
 //@route Post /api/contacts
 //@access Public
 const createContact = (req, res) => {
+    console.log("The request body is:", req.body);
     res.status(201).json({ message: "Create Contact"});
 };
 
@@ -21,6 +22,7 @@ const getContact = (req, res) => {
 
 //@desc Update contact
 //@route Post /api/contacts/:id
+
 //@access Public
 const updateContact = (req, res) => {
     res.status(200).json({ message: `Update contact for ${req.params.id}`});
