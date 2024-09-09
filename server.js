@@ -1,11 +1,14 @@
 const express = require("express");
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv");
 const errorHandler = require("./middleware/errorHandler");
 const contactRoutes = require("./routes/contactRoutes");
 
-//const connectDb();
-const app = express();
+dotenv.config();
 
+const connectDb = require("./config/db");
+
+
+const app = express();
 
 // const port = process.env.PORT || 5002; // Change port
 // app.listen(port, () => {
@@ -20,9 +23,7 @@ app.use(errorHandler);
 
 // const port = process.env.PORT || 5000;
 
-
 const PORT = process.env.PORT || 5002;
-
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 

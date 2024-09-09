@@ -5,15 +5,19 @@ const Contact =require("../models/contactModel");
 //@desc Get all contacts
 //@route GET /api/contacts
 //@access Public
-const getContacts = asyncHandler(async (req, res) => {
+const getContacts = async (req, res) => {
+    try {
     const contacts = await Contact.find()
     res.status(200).json(contacts);
-});
+    } catch (error) {
+    res.status(500).json({message: error.message});
+    }
+};
 
 //@desc Create new contact
 //@route Post /api/contacts
 //@access Public
-const createContact = asyncHandler(async(req, res) => {
+const createContact = async(req, res) => {
     console.log("The request body is:", req.body);
     const {name, email, phone} = req.body;
     if(!name || !email || !phone) {
@@ -26,7 +30,7 @@ const createContact = asyncHandler(async(req, res) => {
         phone,
     });
     res.status(201).json(contact);
-});
+};
 
 //@desc Get contact
 //@route Get /api/contacts/:id
