@@ -1,6 +1,5 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-
 // const contactController = require("../controllers/contactController");
 
 const {
@@ -12,11 +11,11 @@ const {
 } = require("../controllers/contactController");
 
 
-router.get('/contacts', getContacts);
-router.post('/contacts', createContact);
-router.get('/contacts/:id', getContact);
-router.put('/contacts/:id', updateContact);
-router.delete('/contacts/:id', deleteContact);
+router.get('/', getContacts);
+router.post('/', createContact);
+router.get('/:id', getContact);
+router.put('/:id', updateContact);
+router.delete('/:id', deleteContact);
 
 // const contactController = require('.contactController/../controllers/contactController');
 
